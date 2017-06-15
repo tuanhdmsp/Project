@@ -16,7 +16,7 @@ namespace SafetyFirst
             var config = new EasySplashScreen(this)
                 .WithFullScreen()
                 .WithTargetActivity(Java.Lang.Class.FromType(typeof(LoginActivity)))
-                .WithSplashTimeOut(4000)
+                .WithSplashTimeOut(2000)
                 .WithBackgroundResource(Resource.Drawable.splashscreen);
             View view = config.Create();
             SetContentView(view);
