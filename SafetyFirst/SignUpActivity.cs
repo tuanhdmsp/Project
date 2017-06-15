@@ -87,7 +87,7 @@ namespace SafetyFirst
             }
             else
             {
-                Snackbar snackBar = Snackbar.Make(activity_sign_up, "Register Failed ", Snackbar.LengthShort);
+                Snackbar snackBar = Snackbar.Make(activity_sign_up, "Register Failed", Snackbar.LengthShort);
                 snackBar.Show();
             }
         }
