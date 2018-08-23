@@ -1,9 +1,9 @@
 <?php
-$YourPhone  = $argv[1];
-$Content    = $argv[2];
-$user_vht   = 'test';
-$pass_vht   = 'test';
-$brandname  = '0901800086';
+$YourPhone = $argv[1];
+$Content = $argv[2];
+$user_vht = 'test';
+$pass_vht = 'test';
+$brandname = '0901800086';
 $xmlcontent = '<?xml version="1.0" encoding="utf-8"?>
                                     <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
                                       <soap:Body>
@@ -23,15 +23,18 @@ $xmlcontent = '<?xml version="1.0" encoding="utf-8"?>
                                         </SendSMS>
                                       </soap:Body>
                                     </soap:Envelope>';
-$URL        = "http://sms2.vht.com.vn/SendMTAuth/SendMT2.asmx?wsdl";
-$ch         = curl_init($URL);
-if (!is_ssl()) {
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-}
+$URL = "http://sms2.vht.com.vn/SendMTAuth/SendMT2.asmx?wsdl";
+$ch = curl_init($URL);
+
+if (!is_ssl())
+	{
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	}
+
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: text/xml'
+	'Content-Type: text/xml'
 ));
 curl_setopt($ch, CURLOPT_POSTFIELDS, "$xmlcontent");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
